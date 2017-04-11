@@ -25,7 +25,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def edit
-    @job = job.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def update
@@ -46,7 +46,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 
 end
